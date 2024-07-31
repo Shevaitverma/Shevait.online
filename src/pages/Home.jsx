@@ -85,8 +85,7 @@ const Home = () => {
             <FaGraduationCap className="text-5xl text-blue-500 mb-4 mx-auto" />
             <h3 className="text-xl font-semibold mb-2">Education</h3>
             <p className="text-gray-700">
-              Bachelor’s of Engineering in Computer Science from Chandigarh University. 
-              Completed certifications in Cloud Computing and Full Stack Development.
+              Computer Science and Engineering in Information Security (Chandigarh University)
             </p>
           </div>
         </div>

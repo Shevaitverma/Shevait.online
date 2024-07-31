@@ -9,29 +9,29 @@ import portfolio_web from '../assets/portfolio.png'
  
 const projects = [
   {
-    image: todo_pic,
-    title: 'Todo App',
-    description: 'A full-stack application built with the MERN stack, featuring user authentication and management.',
-    techStack: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    image: inventex_app,
-    title: 'Inventex',
-    description: 'Backend authentication service for an inventory management system using JWT.',
-    techStack: ['Node.js', 'Express', 'JWT'],
-  },
-  {
-    image: note_app,
-    title: 'Note-taking App',
-    description: 'Full-stack note-taking application with Django backend and React frontend.',
-    techStack: ['Django', 'React', 'SQL'],
-  },
-  {
     image: portfolio_web,
     title: 'portfolio website',
     description: 'React js portfolio website for myself to show my skills and development experience.',
     techStack: ['React', 'tailwind css'],
   },
+  {
+    image: todo_pic,
+    title: 'Todo App',
+    description: 'A full-stack application built with the MERN stack, featuring user auth and management.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'JWT', 'Bcryptjs'],
+  },
+  {
+    image: inventex_app,
+    title: 'Inventex',
+    description: 'Backend authentication service for an inventory management system using JWT.',
+    techStack: ['Node.js', 'Express', 'JWT', 'MongoDB', 'Bcryptjs'],
+  },
+  {
+    image: note_app,
+    title: 'Note-taking App',
+    description: 'Full-stack note-taking application with Django backend and React frontend.',
+    techStack: ['Django', 'React','Django REST API', 'SQL'],
+  }
 ];
 
 const Projects = () => {
@@ -58,7 +58,7 @@ const Projects = () => {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {projects.map((project, index) => (
-                <div className="carousel-slide min-w-full flex justify-center p-4" key={index}>
+                <div className="carousel-slide flex justify-center p-4" key={index}>
                   <ProjectCard
                     image={project.image}
                     title={project.title}
