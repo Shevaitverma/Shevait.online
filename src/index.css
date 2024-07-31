@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* In your global CSS file */
+header {
+  position: relative; /* Normal flow */
+  width: 100%;
+  background-color: white; /* Or your preferred color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better appearance */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+header.sticky {
+  position: fixed; /* Fixes the header at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s; /* Smooth transition for appearing/disappearing */
+}
+
+
+
+/* src/index.css or src/styles/global.css */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  
+/* Custom Clip Path for Image */
+.clip-path-custom {
+  clip-path: polygon(20% 0%, 100% 10%, 80% 100%, 0% 90%);
+}

@@ -1,0 +1,35 @@
+// src/components/ProjectCard.jsx
+
+import PropTypes from 'prop-types';
+
+const ProjectCard = ({ image, title, description, techStack }) => {
+  return (
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-700 mb-4">{description}</p>
+        <div className="flex flex-wrap gap-2">
+          {techStack.map((tech, index) => (
+            <span
+              key={index}
+              className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-sm"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// PropTypes for ProjectCard
+ProjectCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  techStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+export default ProjectCard;
