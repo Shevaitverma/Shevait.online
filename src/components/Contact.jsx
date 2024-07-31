@@ -93,10 +93,10 @@ const Contact = ({ id }) => {
               <a href="tel:+919622391385" className="text-blue-500 hover:text-blue-600 transition">
                 <FaPhone size={28} />
               </a>
-              <a href="https://www.linkedin.com/in/shevaitverma" className="text-blue-500 hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/shevait-verma/" className="text-blue-500 hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={28} />
               </a>
-              <a href="https://github.com/shevaitverma" className="text-blue-500 hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Shevaitverma" className="text-blue-500 hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer">
                 <FaGithub size={28} />
               </a>
             </div>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ProjectCard = ({ image, title, description, techStack }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <img src={image} alt={title} className="w-full h-[35rem] object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-700 mb-4">{description}</p>

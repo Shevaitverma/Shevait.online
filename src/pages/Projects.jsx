@@ -2,25 +2,35 @@
 
 import { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-
+import todo_pic from '../assets/todo_app.png';
+import note_app from '../assets/notes_app.png';
+import inventex_app from '../assets/inventex.png'
+import portfolio_web from '../assets/portfolio.png'
+ 
 const projects = [
   {
-    image: 'path/to/project1.jpg',
+    image: todo_pic,
     title: 'Todo App',
     description: 'A full-stack application built with the MERN stack, featuring user authentication and management.',
     techStack: ['React', 'Node.js', 'MongoDB'],
   },
   {
-    image: 'path/to/project2.jpg',
+    image: inventex_app,
     title: 'Inventex',
     description: 'Backend authentication service for an inventory management system using JWT.',
     techStack: ['Node.js', 'Express', 'JWT'],
   },
   {
-    image: 'path/to/project3.jpg',
+    image: note_app,
     title: 'Note-taking App',
     description: 'Full-stack note-taking application with Django backend and React frontend.',
     techStack: ['Django', 'React', 'SQL'],
+  },
+  {
+    image: portfolio_web,
+    title: 'portfolio website',
+    description: 'React js portfolio website for myself to show my skills and development experience.',
+    techStack: ['React', 'tailwind css'],
   },
 ];
 

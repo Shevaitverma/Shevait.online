@@ -57,7 +57,7 @@ const Home = () => {
             <img
               src={pp}
               alt="Shevait Verma"
-              className="w-full h-full object-cover clip-path-custom rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              className="w-full h-full-2xl object-cover clip-path-custom rounded-lg shadow-lg transform hover:scale-105 transition-transform"
             />
           </div>
         </div>
