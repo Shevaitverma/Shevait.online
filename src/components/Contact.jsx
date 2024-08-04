@@ -1,7 +1,22 @@
+// src/components/Contact.jsx
+
 import { useState } from "react";
 import PropTypes from "prop-types";
-import contactPic from "../assets/contact.png"; // Use an actual image file
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa'; // Import icons
+import emailjs from '@emailjs/browser';
+import contactPic from "../assets/contact.png";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
+
+
+// Access environment variables
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+
+console.log("SERVICE_ID", SERVICE_ID);
+console.log("TEMPLATE_ID", TEMPLATE_ID);
+console.log("PUBLIC_KEY", PUBLIC_KEY);
+
 
 const Contact = ({ id }) => {
   const [formData, setFormData] = useState({
@@ -19,7 +34,31 @@ const Contact = ({ id }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+
+
+    const templateParams = {
+      to_name: 'Shevait Verma', // Replace with your name or dynamic value
+      from_name: formData.name, // Maps name to form_name
+      email_id: formData.email, // Maps email to email_id
+      message: formData.message, // Maps message to message
+    };
+    // EmailJS send function
+    emailjs.send(
+      SERVICE_ID, 
+      TEMPLATE_ID,
+      templateParams,
+      {
+        publicKey: PUBLIC_KEY,
+      }
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        alert('Failed to send message. Please try again later.');
+      });
   };
 
   return (
