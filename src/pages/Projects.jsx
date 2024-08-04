@@ -1,36 +1,38 @@
-// src/pages/Projects.jsx
-
 import { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import todo_pic from '../assets/todo_app.png';
 import note_app from '../assets/notes_app.png';
-import inventex_app from '../assets/inventex.png'
-import portfolio_web from '../assets/portfolio.png'
- 
+import inventex_app from '../assets/inventex.png';
+import portfolio_web from '../assets/portfolio.png';
+
 const projects = [
   {
     image: portfolio_web,
-    title: 'portfolio website',
-    description: 'React js portfolio website for myself to show my skills and development experience.',
-    techStack: ['React', 'tailwind css'],
+    title: 'Portfolio Website',
+    description: 'React.js portfolio website for myself to showcase my skills and development experience.',
+    techStack: ['React', 'Tailwind CSS'],
+    githubLink: 'https://github.com/Shevaitverma'
   },
   {
     image: todo_pic,
     title: 'Todo App',
-    description: 'A full-stack application built with the MERN stack, featuring user auth and management.',
+    description: 'A full-stack application built with the MERN stack, featuring user authentication and management.',
     techStack: ['React', 'Node.js', 'MongoDB', 'JWT', 'Bcryptjs'],
+    githubLink: 'https://github.com/Shevaitverma/Project_todo'
   },
   {
     image: inventex_app,
     title: 'Inventex',
     description: 'Backend authentication service for an inventory management system using JWT.',
     techStack: ['Node.js', 'Express', 'JWT', 'MongoDB', 'Bcryptjs'],
+    githubLink: 'https://github.com/Shevaitverma/Inventex_v1'
   },
   {
     image: note_app,
     title: 'Note-taking App',
     description: 'Full-stack note-taking application with Django backend and React frontend.',
-    techStack: ['Django', 'React','Django REST API', 'SQL'],
+    techStack: ['Django', 'React', 'Django REST API', 'SQL'],
+    githubLink: 'https://github.com/Shevaitverma/Notes'
   }
 ];
 
@@ -64,6 +66,7 @@ const Projects = () => {
                     title={project.title}
                     description={project.description}
                     techStack={project.techStack}
+                    githubLink={project.githubLink}
                   />
                 </div>
               ))}
