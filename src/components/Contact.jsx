@@ -49,6 +49,9 @@ const Contact = ({ id }) => {
       templateParams,
       {
         publicKey: PUBLIC_KEY,
+        limitRate: {
+          throttle: 10 * 1000, // 20 seconds
+        },
       }
     )
       .then((response) => {
