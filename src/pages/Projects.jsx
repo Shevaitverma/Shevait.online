@@ -60,7 +60,7 @@ const Projects = () => {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {projects.map((project, index) => (
-                <div className="carousel-slide flex justify-center p-4" key={index}>
+                <div className="carousel-slide flex justify-center p-6 min-w-full" key={index}>
                   <ProjectCard
                     image={project.image}
                     title={project.title}
