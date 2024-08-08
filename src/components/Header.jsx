@@ -1,9 +1,11 @@
 import { useState, useCallback, useEffect } from "react";
 import { Link } from "react-scroll"; // For smooth scrolling
+import { FaBars, FaTimes } from "react-icons/fa"; // For hamburger and close icons
 
 const Header = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [headerClass, setHeaderClass] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     const currentScrollTop = window.pageYOffset;
@@ -22,15 +24,19 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll]); // Include handleScroll in the dependency array
+  }, [handleScroll]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
-    <header className={headerClass}>
+    <header className={`fixed top-0 left-0 w-full z-50 ${headerClass}`}>
       <div className="container mx-auto flex justify-between items-center px-4 py-4">
         <div className="text-2xl font-bold text-gray-800">
           <a href="#home">Shevait Verma</a>
         </div>
-        <nav className="flex space-x-6">
+        <nav className="hidden md:flex space-x-6">
           <Link
             to="home"
             smooth={true}
@@ -77,7 +83,80 @@ const Header = () => {
             Contact
           </Link>
         </nav>
+        <div className="md:hidden">
+          <button onClick={toggleMobileMenu} className="text-gray-800">
+            {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <nav className="md:hidden bg-white shadow-lg">
+          <ul className="flex flex-col space-y-4 px-4 py-6">
+            <li>
+              <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 hover:text-blue-500 cursor-pointer"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 hover:text-blue-500 cursor-pointer"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="skills"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 hover:text-blue-500 cursor-pointer"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 hover:text-blue-500 cursor-pointer"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 hover:text-blue-500 cursor-pointer"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
