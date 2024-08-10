@@ -120,9 +120,7 @@ const Home = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4">Interested in collaborating?</h2>
           <p className="text-lg mb-8">I&apos;m always open to discussing new projects and creative ideas.</p>
-          <a href="/contact" className="bg-white text-gray-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition">
-            Get In Touch
-          </a>
+          
         </div>
       </section>
 
