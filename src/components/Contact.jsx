@@ -44,17 +44,32 @@ const Contact = ({ id }) => {
       {
         publicKey: PUBLIC_KEY,
         limitRate: {
-          throttle: 10 * 1000, // 20 seconds
+          // Set the limit rate for the application
+          id: 'app',
+          // Allow 1 request per 1 minute
+          throttle: 60 * 1000,
         },
       }
     )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Message sent successfully!');
+        // reset the form data 
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        })
       })
       .catch((err) => {
         console.error('FAILED...', err);
         alert('Failed to send message. Please try again later.');
+        // reset the form data 
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        })
       });
   };
 
