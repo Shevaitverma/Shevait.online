@@ -15,11 +15,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
         stage('build success') {
             steps {
                 echo 'build success'
