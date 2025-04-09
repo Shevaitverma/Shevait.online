@@ -19,6 +19,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                export NVM_DIR="$HOME/.nvm"
+                . "$NVM_DIR/nvm.sh"
                 npm install
                 '''
             }
@@ -27,6 +29,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                export NVM_DIR="$HOME/.nvm"
+                . "$NVM_DIR/nvm.sh"
                 npm run build
                 '''
             }
