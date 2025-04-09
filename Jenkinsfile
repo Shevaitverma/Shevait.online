@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         NVM_DIR = "${HOME}/.nvm"
-        NODE_VERSION = "18"
     }
 
     triggers {
@@ -23,8 +22,7 @@ pipeline {
                 export NVM_DIR="$HOME/.nvm"
                 [ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"
                 . "$NVM_DIR/nvm.sh"
-                nvm install $NODE_VERSION
-                nvm use $NODE_VERSION
+                nvm install --lts
                 node -v
                 npm -v
                 '''
@@ -34,9 +32,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                export NVM_DIR="$HOME/.nvm"
-                . "$NVM_DIR/nvm.sh"
-                nvm use $NODE_VERSION
                 npm install
                 '''
             }
@@ -45,9 +40,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                export NVM_DIR="$HOME/.nvm"
-                . "$NVM_DIR/nvm.sh"
-                nvm use $NODE_VERSION
                 npm run build
                 '''
             }
