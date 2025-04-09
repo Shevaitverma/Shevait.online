@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Shevaitverma/Shevait.online.git'
+                git branch: 'main', credentialsId:'githubToken' url: 'https://github.com/Shevaitverma/Shevait.online.git'
             }
         }
 
