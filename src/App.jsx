@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  console.log("Name= ",process.env.REACT_APP_NAME);
+  console.log("Name= ",import.meta.env.REACT_APP_NAME);
   return (
     <Router>
       <Header />
