@@ -22,6 +22,7 @@ pipeline {
                 export NVM_DIR="$HOME/.nvm"
                 . "$NVM_DIR/nvm.sh"
                 npm install
+                aws s3 cp s3://myenv0001/.env .env
                 '''
             }
         }
